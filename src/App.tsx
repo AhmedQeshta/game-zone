@@ -1,7 +1,7 @@
-import React, {FC} from 'react';
-import {Text} from 'react-native';
+import React, { FC } from 'react';
+import { RootDrawer } from './routes';
 
 const App: FC = () => {
-  return <Text>fist</Text>;
+  return <RootDrawer />;
 };
 export default App;
