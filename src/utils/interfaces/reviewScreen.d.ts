@@ -11,4 +11,7 @@ interface Route {
 
 export interface ReviewScreenProps {
   route: Route;
+  navigation: {
+    goBack: () => void;
+  };
 }

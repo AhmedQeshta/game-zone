@@ -1,13 +1,23 @@
 import React, { FC } from 'react';
-import { Text, View } from 'react-native';
+import { Button, Text, View } from 'react-native';
 import { ReviewScreenProps } from '../utils/interfaces';
+import { colors } from '../styles/theme';
+import { reviewStyles } from '../styles';
 
-const ReviewDetails: FC<ReviewScreenProps> = ({ route: { params } }) => {
+const ReviewDetails: FC<ReviewScreenProps> = ({
+  navigation,
+  route: { params },
+}) => {
   return (
-    <View>
-      <Text>{params.id}</Text>
-      <Text>{params.title}</Text>
-      <Text>{params.body}</Text>
+    <View style={reviewStyles.container}>
+      <Text style={reviewStyles.title}>{params.title}</Text>
+      <Text style={reviewStyles.body}>{params.body}</Text>
+      <Text style={reviewStyles.rating}>Rating : {params.rating}</Text>
+      <Button
+        title="back"
+        color={colors.secondary}
+        onPress={() => navigation.goBack()}
+      />
     </View>
   );
 };

@@ -1,50 +1,49 @@
+import React from 'react';
+import { Header } from '../components/shared/Header';
 import { About, Home, ReviewDetails } from '../screens';
 import { AppScreen } from '../utils/interfaces';
 import { HomeStackNavigator } from './homeStack';
 
 export const screen: AppScreen[] = [
   {
-    name: 'Home',
+    name: 'Home Stack',
     component: Home,
     options: {
-      title: 'GameZone',
-      // headerShown: false,
+      headerTitle: () => <Header title="GameZone" />,
+      headerShown: false,
     },
   },
   {
     name: 'ReviewDetails',
     component: ReviewDetails,
     options: {
-      title: 'Review Details',
-      headerStyle: {
-        backgroundColor: '#fff',
-      },
-      // headerShown: false,
+      headerTitle: () => <Header title="Review Details" />,
+      headerShown: false,
     },
   },
 ];
 
 export const drawer: AppScreen[] = [
   {
-    name: 'HomeNavigator',
+    name: 'Home',
     component: HomeStackNavigator,
-    options: {
-      title: 'Home',
-      headerStyle: {
-        backgroundColor: '#fff',
-      },
-      headerShown: false,
+    options: () => {
+      return {
+        headerTitle: () => <Header title="Home" />,
+        headerStyle: {
+          backgroundColor: '#fff',
+        },
+      };
     },
   },
   {
-    name: 'AboutNavigator',
+    name: 'About',
     component: About,
     options: {
-      title: 'About',
+      headerTitle: () => <Header title="About" />,
       headerStyle: {
         backgroundColor: '#fff',
       },
-      headerShown: false,
     },
   },
 ];

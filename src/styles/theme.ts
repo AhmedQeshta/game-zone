@@ -13,6 +13,6 @@ export const colors = {
   black: '#000',
   grey: '#a9a9a9',
   lightGrey: '#d3d3d3',
-  darkGrey: '#808080',
   danger: '#ff5252',
+  darkGrey: '#333',
 };

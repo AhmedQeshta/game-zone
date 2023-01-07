@@ -1,7 +1,7 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 
 type StackNavigationOptions = {
-  title?: string;
+  headerTitle?: () => ReactNode | string;
   headerShown?: boolean;
   headerStyle?: {
     backgroundColor?: string;
@@ -11,5 +11,5 @@ type StackNavigationOptions = {
 export interface AppScreen {
   name: string;
   component: FC | any;
-  options?: StackNavigationOptions;
+  options?: any;
 }

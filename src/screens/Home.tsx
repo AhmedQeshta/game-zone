@@ -1,7 +1,7 @@
 import React, { FC, useCallback, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { AppReviews, HomeScreenProps } from '../utils/interfaces';
-import { globalStyles } from '../styles';
+import { globalStyles, homeStyles } from '../styles';
 
 const Home: FC<HomeScreenProps> = ({ navigation }) => {
   const [reviews, setReviews] = useState<AppReviews[]>([
@@ -36,8 +36,10 @@ const Home: FC<HomeScreenProps> = ({ navigation }) => {
     <View style={globalStyles.container}>
       {reviews.length ? (
         reviews?.map(review => (
-          <Pressable key={review.id}>
-            <Text onPress={() => handlePress(review)}>{review.title}</Text>
+          <Pressable key={review.id} style={homeStyles.textContainer}>
+            <Text style={homeStyles.text} onPress={() => handlePress(review)}>
+              {review.title}
+            </Text>
           </Pressable>
         ))
       ) : (
